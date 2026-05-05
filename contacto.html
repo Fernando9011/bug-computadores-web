@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Soporte Técnico IA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>SOPORTE TÉCNICO IA</h1>
+            
+            <div class="image-section">
+                <img src="tu-logo.png" alt="Bug Computadors y Servicios">
+            </div>
+            
+            <p class="status">
+                UBICACIÓN: <span id="ubicacion">CARGANDO...</span> - <span id="reloj">00:00:00</span>
+            </p>
+        </header>
+
+        <nav class="links">
+            <a href="index.html">inicio</a> // 
+            <a href="servicios.html">servicios</a> // 
+            <a href="ia-local.html">ia local</a> // 
+            <a href="contacto.html">contacto</a> // 
+            <a href="blog.html">blog</a>
+        </nav>
+
+        <!-- SECCIÓN DE CONTACTO -->
+        <section class="content-section">
+            <h2>Contacto</h2>
+            <p>¿Necesitas soporte técnico o quieres implementar IA en tu equipo? ¡Escríbeme!</p>
+
+            <!-- INFORMACIÓN DE CONTACTO -->
+            <div style="margin-bottom: 30px; padding: 20px; background-color: #f0f8ff; border-radius: 5px;">
+                <h3>📋 Información de Contacto</h3>
+                <p><strong>📍 Ubicación:</strong> Popayán, Colombia</p>
+                <p><strong>📧 Email:</strong> bugcomputadores@gmail.com</p>
+                <p><strong>⏰ Horario de atención:</strong> Lunes a Sábado - 8:00 AM a 6:00 PM</p>
+                <p><strong>🌐 Modalidad:</strong> Servicio remoto (toda Colombia) y presencial (Popayán)</p>
+            </div>
+
+            <!-- FORMULARIO DE CONTACTO -->
+            <h3>✉️ Envíame un mensaje</h3>
+                <!-- REEMPLAZA TU FORMULARIO ACTUAL CON ESTO -->
+
+            <form action="https://formspree.io/f/xeevyrgy" method="POST" style="text-align: left; max-width: 600px; margin: 0 auto;">
+    
+                <div style="margin-bottom: 15px;">
+                    <label for="nombre" style="display: block; margin-bottom: 5px; font-weight: bold;">Nombre completo:</label>
+                    <!-- Es vital el name="nombre" -->
+                    <input type="text" id="nombre" name="nombre" required 
+                        style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">Correo electrónico:</label>
+                    <!-- Es vital el name="email" -->
+                    <input type="email" id="email" name="email" required 
+                        style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <label for="mensaje" style="display: block; margin-bottom: 5px; font-weight: bold;">Mensaje:</label>
+                    <!-- Es vital el name="mensaje" -->
+                    <textarea id="mensaje" name="mensaje" rows="5" required 
+                            style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+                </div>
+
+                <button type="submit" 
+                        style="width: 100%; padding: 12px; background-color: #0077cc; color: white; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; font-weight: bold;">
+                    📩 Enviar mensaje
+                </button>
+            </form>
+
+            <!-- MENSAJE DE CONFIRMACIÓN (oculto inicialmente) -->
+            <div id="mensajeExito" style="display: none; margin-top: 20px; padding: 15px; background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px; color: #155724;">
+                ✅ ¡Mensaje enviado! Te responderé en menos de 24 horas.
+            </div>
+
+        </section>
+
+    </div>
+    
+    <script src="js/script.js"></script>
+    
+    <!-- Script para manejar el formulario -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Aquí normalmente enviarías los datos a un servidor
+            // Por ahora, solo mostramos el mensaje de éxito
+            
+            document.getElementById('mensajeExito').style.display = 'block';
+            this.reset();
+            
+            // Opcional: Desplazar hacia el mensaje de éxito
+            document.getElementById('mensajeExito').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
