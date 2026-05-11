@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Bug Computadors y Servicios</title>
+    <meta name="description" content="Artículos sobre soporte técnico, IA local y desarrollo web. Bug Computadors y Servicios, Popayán.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>BUG COMPUTADORS Y SERVICIOS</h1>
+            <div class="image-section">
+                <img src="tu-logo.png" alt="Bug Computadors y Servicios">
+            </div>
+            <p class="status">
+                UBICACIÓN: <span id="ubicacion">CARGANDO...</span> - <span id="reloj">00:00:00</span>
+            </p>
+        </header>
+
+        <nav class="links">
+            <a href="index.html">inicio</a> // 
+            <a href="servicios.html">servicios</a> // 
+            <a href="ia-local.html">ia local</a> // 
+            <a href="contacto.html">contacto</a> // 
+            <a href="blog.html">blog</a>
+        </nav>
+
+        <section class="content-section">
+            <h2>Blog Técnico</h2>
+            <p>Artículos sobre soporte técnico, inteligencia artificial local y desarrollo web.</p>
+
+            <!-- ARTÍCULO 1 -->
+            <div style="margin-top: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 5px; background: #fafafa;">
+                <p style="font-size: 0.75rem; color: #888; margin-bottom: 5px;">Mayo 2026 · IA Local</p>
+                <h3 style="margin-top: 0;">Cómo ejecutar IA local en una AMD RX 580 con Vulkan</h3>
+                <p>Una de las preguntas más frecuentes que recibo es: <em>"¿Puedo correr inteligencia artificial en mi PC sin gastar en una GPU NVIDIA?"</em> La respuesta es sí — y en este artículo te explico cómo lo hago en mi propio equipo.</p>
+                <p>El mayor obstáculo para los usuarios de AMD es que la mayoría de herramientas de IA usan CUDA, una tecnología exclusiva de NVIDIA. Sin embargo, <strong>Ollama</strong> permite usar aceleración por GPU mediante <strong>Vulkan</strong>, que sí es compatible con las tarjetas Radeon.</p>
+                <h3>Configuración necesaria</h3>
+                <p>El truco está en un script .BAT que define las variables de entorno correctas antes de iniciar Ollama:</p>
+                <pre><code>set OLLAMA_MODELS=F:\Ollama_Modelos
+set OLLAMA_VULKAN=1
+set HSA_OVERRIDE_GFX_VERSION=10.3.0
+ollama serve</code></pre>
+                <p>La variable <code>HSA_OVERRIDE_GFX_VERSION=10.3.0</code> es la clave — le indica al sistema que la RX 580 (arquitectura GFX 8.0) debe tratarse como una GPU GFX 10.3 para habilitar las capacidades necesarias.</p>
+                <p>Con esta configuración puedo correr modelos como <code>llama3.1:8b</code> y <code>qwen2.5-coder</code> con aceleración GPU real, sin depender de internet ni servicios en la nube.</p>
+                <p style="margin-top: 15px;">
+                    <a href="contacto.html" style="color: #0077cc; font-weight: bold;">¿Quieres esto en tu equipo? Contáctame →</a>
+                </p>
+            </div>
+
+            <!-- PRÓXIMOS ARTÍCULOS -->
+            <div style="margin-top: 20px; padding: 15px; background: #f0f8ff; border-radius: 5px; border-left: 4px solid #0077cc;">
+                <p style="margin: 0; color: #555; font-size: 0.9rem;">
+                    <strong>Próximamente:</strong> Cómo hacer mantenimiento preventivo a tu PC · Generación de imágenes con Fooocus y DirectML · Primeros pasos en HTML para negocios locales.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/script.js"></script>
+    <!-- BOTÓN WHATSAPP FLOTANTE -->
+    <a href="https://wa.me/573XXXXXXXXX?text=Hola%2C%20necesito%20soporte%20técnico" 
+       class="whatsapp-float" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.103 1.522 5.83L.057 23.925a.5.5 0 0 0 .61.61l6.104-1.463A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.502-5.202-1.378l-.374-.214-3.878.93.946-3.858-.228-.38A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+        </svg>
+        WhatsApp
+    </a>
+</body>
+</html>
